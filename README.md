@@ -19,6 +19,7 @@ python3 server.py
 Open http://127.0.0.1:8000/ in your browser. Stop with Ctrl+C.
 The server binds explicitly to `127.0.0.1`, so other computers cannot connect
 directly. Click **Play hello world** to make the greeting bounce and wave.
+The text turns green during playback and returns to blue when it finishes.
 You can replay it after it finishes. With reduced motion enabled in your system
 or browser, the greeting uses a brief fade instead.
 

@@ -13,6 +13,7 @@ PAGE = b"""<!doctype html>
   <style>
     body { font-family: system-ui, sans-serif; text-align: center; padding: 4rem 1rem; }
     h1 { display: inline-block; color: #174ea6; }
+    h1.playing { color: #188038; }
     button { display: block; margin: 1.5rem auto; padding: .7rem 1.2rem;
              font: inherit; cursor: pointer; }
   </style>
@@ -27,6 +28,7 @@ PAGE = b"""<!doctype html>
     const status = document.querySelector('#status');
     button.addEventListener('click', async () => {
       button.disabled = true;
+      greeting.classList.add('playing');
       status.textContent = 'Saying hello...';
       const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
       const frames = reducedMotion
@@ -43,6 +45,7 @@ PAGE = b"""<!doctype html>
         }).finished;
         status.textContent = 'Hello again! Play it again whenever you like.';
       } finally {
+        greeting.classList.remove('playing');
         button.disabled = false;
       }
     });
